@@ -1,5 +1,6 @@
 import { MainPage } from './pages/MainPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { StravaLogin } from './components/Modals/StravaLogin';
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
           <Route path="login" element={<MainPage />} />
           <Route path="auth" element={<MainPage />} />
         </Route>
+        <Route path="/strava" element={<StravaLogin />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

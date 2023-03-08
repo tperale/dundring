@@ -22,6 +22,7 @@ import { useUser } from '../../context/UserContext';
 import { useToast } from '@chakra-ui/react';
 import { useLoginModal } from '../../context/ModalContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { stravaAuthUrl } from './StravaLogin';
 import { ApiStatus } from '@dundring/types';
 import * as utils from '@dundring/utils';
 import { maxUsernameLength } from '@dundring/utils';
@@ -267,6 +268,9 @@ const Login = ({
   const mail = state.mail.value;
   const mailIsTouched = state.mail.touched;
   const mailIsValid = utils.mailIsValid(mail);
+  const loginStrava = () => {
+    window.location.href = stravaAuthUrl;
+  };
 
   const loginWithMail = async () => {
     const trimmedMail = state.mail.value.trim();
@@ -340,6 +344,9 @@ const Login = ({
                     onBlur={(_) => setMail(mail.replace(' ', ''), true)}
                   />
                 </FormControl>
+                <Button onClick={() => loginStrava()} type="submit">
+                  Login strava
+                </Button>
 
                 {state.errorMessage ? (
                   <Text color="red.500">{state.errorMessage}</Text>

@@ -107,6 +107,13 @@ export const authenticateMailLogin = async (
   >(`${httpUrl}/auth/mail`, body, abortController);
 };
 
+export const stravatoken = async (code: string) => {
+  return post<ApiResponseBody<LoginResponseBody>, {}>(
+    `${httpUrl}/stravatoken?code=${code}`,
+    {}
+  );
+};
+
 export const registerMailLogin = async (
   body: MailAuthenticationRegisterRequestBody
 ) => {
