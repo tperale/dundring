@@ -33,8 +33,8 @@ export const StravaLogin = () => {
 export const stravaAuthUrl =
   'https://www.strava.com/oauth/authorize?' +
   new URLSearchParams({
-    client_id: '39382',
-    redirect_uri: 'http://localhost:3000/strava',
+    client_id: import.meta.env.VITE_STRAVA_CLIENT_ID as string,
+    redirect_uri: import.meta.env.VITE_STRAVA_REDIRECT_URI as string,
     response_type: 'code',
     scope: 'activity:write,read',
     approval_prompt: 'auto',

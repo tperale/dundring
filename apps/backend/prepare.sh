@@ -11,6 +11,8 @@ MAIL_HOST=
 MAIL_PORT=
 MAIL_USER=
 MAIL_PASSWORD=
+STRAVA_CLIENT_ID=
+STRAVA_CLIENT_SECRET=
 "
 
 echo "backend/prepare.sh – Starting ⚡️"
